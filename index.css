@@ -1,0 +1,530 @@
+/* Index Styles*/
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height: 100%;
+    background-image: url('WebResources/concrete\ bg\ vert.jpg');
+    background-size: cover;
+    box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/*Style for Index */
+.Banner-wrapper{
+    position: relative;
+    height:100vh;
+}
+.banner{
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: center;
+    animation: zoomOut 10s ease-out;
+    z-index:900;
+}
+
+.BannerImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('WebResources/BannerIndex.png');
+    background-repeat: no-repeat;
+    filter: brightness(40%); 
+    z-index: 1; 
+}
+
+@keyframes zoomOut {
+    0%{
+        transform: scale(1.2);
+    }
+
+    50%{
+        transform:scale(1);
+}
+    100%{
+        trasform: scale(1.2);
+    }
+}
+
+.BannerContent{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 600;
+}
+.BannerLogo{
+    width: 500px;
+    filter: brightness(100%);
+    z-index: 500;
+    position:relative;
+    opacity:0;
+    animation: fadeIn 10s ease-out ;
+    z-index: 500;
+}
+.BannerLogo.show{
+    opacity: 1;
+    animation: none;
+}
+.BannerLogo img{
+    width: 100%;
+    height: auto;
+}
+
+.BannerDetails{
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    opacity:0;
+    animation: fadeInDELAY 10s ease-out ;
+    z-index: 500;
+}
+.BannerDetails.show{
+    opacity: 1;
+    animation: none;
+}
+
+@keyframes fadeIn{
+    0%, 30%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes fadeInDELAY{
+    0%, 50%{
+        opacity:0;
+    }
+    70%{
+        opacity:0.5
+    }
+    100%{
+        opacity:1;
+    }
+}
+/* banner tablet view */
+@media only screen and (max-width: 1024px){
+    .BannerContent{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .BannerLogo {
+        left:50px;
+    }
+    .BannerLogo img{
+        width:400px;
+    }
+    .BannerDetails{
+        font-size:25px;
+        right:100px;
+    }
+}
+
+/* banner mobile view */
+@media only screen and (max-width: 390px) {
+    .BannerContent {
+        display: flex;               
+        flex-direction: column;      
+        justify-content: center;    
+        align-items: center;         
+        width: 100%;                
+        height: 100vh;              
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+ 
+    .BannerLogo {
+        display: flex;               
+        justify-content: center;     
+        align-items: center;        
+        width: auto;                
+        height: auto;                
+       
+        margin-right: 90px;
+                                                 
+    }
+
+   
+    .BannerLogo img {
+       
+        max-width: 300px;            
+        width: 100%;                
+        height: auto;                
+        display: block;             
+    }
+   
+    .BannerDetails {
+        text-align: center;         
+        margin-top: 20px;           
+
+        padding: 10px;
+      
+        font-size:larger;     
+    }
+}
+
+/* Main Container */
+.WebContainer {
+    position: relative; 
+    margin: 0 auto; 
+    max-width: 80%;
+    width: 100%;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    box-shadow: 0 10px 15px 15px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(#282524, #4d3932, #6b4b38, #4d3932);
+    /* overflow: hidden;  */
+    box-sizing: border-box; 
+    border-radius: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;       
+    
+    
+}
+
+main h1{
+    color:rgb(231, 220, 206);
+    font-family: "Bakbak One", sans-serif;
+}
+/* h1 mobile view */
+@media only screen and (max-width: 390px){
+    main h1{
+        font-size: large;
+        text-align: center;
+    }
+}
+
+
+.PosterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    width: 80%;
+    height: 600px;
+    overflow: hidden;
+    margin-top: 50px; 
+    z-index: 900;
+}
+
+/* Individual Items para sa posters*/
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; 
+    width: 400px;
+    height: 470px;
+    border-radius: 10px;
+    /* background-color: #000000; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 5);
+    transition: transform 0.5s ease, filter 0.5s ease;
+    cursor: pointer;
+    overflow: hidden; 
+}
+
+/*Images*/
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.item:nth-child(1) {
+    transform: translateX(-300px) scale(0.8);
+    z-index: 1;
+    filter: blur(5px);
+}
+
+.item:nth-child(2) {
+    transform: translateX(-150px) scale(0.9);
+    z-index: 2;
+    filter: blur(3px);
+}
+
+.item:nth-child(3) {
+    transform: translateX(0px) scale(1.2);
+    z-index: 3;
+    filter: none;
+}
+
+.item:nth-child(4) {
+    transform: translateX(150px) scale(0.9);
+    z-index: 2;
+    filter: blur(3px);
+}
+
+.item:nth-child(5) {
+    transform: translateX(300px) scale(0.8);
+    z-index: 1;
+    filter: blur(5px);
+}
+/* Poster container tablet view */
+@media only screen and (max-width: 1024px){
+    .PosterContainer{
+        /* background-color: brown; */
+        width: 80%;
+        position: relative;
+        mask-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0)
+        );
+    }
+    .item{
+        width:300px;
+        height:370px;
+    }
+}
+/* Poster container mobile view */
+@media only screen and (max-width: 390px){
+    .PosterContainer{
+        width: 100%;
+        height: 310px;
+        position: relative;
+    }
+    .item{
+        width:200px;
+        height:250px;
+    }
+}
+
+
+/* For Video and Operating Hours */
+.OuterContainer {
+    width: 90%;
+    margin: 0 auto;
+    height: 80vh;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    margin-top: 50px; 
+}
+
+
+.Advertisements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: solid white;
+    box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.video-wrapper, .OperatingHours {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+video, .OperatingHours img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Video and Operating hrs tablet view */
+@media only screen and (max-width: 1024px) {
+
+    .OuterContainer{
+        width:80%
+    }
+}
+
+/* Video and Operating hrs mobile view */
+@media only screen and (max-width: 390px){
+    .OuterContainer{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .Advertisements{
+        display: flex;
+        flex-direction: column;
+    }
+    .video-wrapper, .OperatingHours {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    video, .OperatingHours img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* For Uniuque Branding */
+.UniqueBranding {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 20px; 
+    width: 90%;
+    height: 900px;
+    margin: 50px auto; 
+    align-items: center; 
+    justify-items: center; 
+    margin-top: 100px; 
+    z-index: 900;
+    padding-bottom: 20px;
+}
+
+/* Individual Branding Boxes */
+.Branding {
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    box-shadow: 0 10px 15px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+ 
+}
+
+/* Cover Image Styling */
+.Cover.Photo img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: opacity 0.3s ease; 
+}
+
+/* Cover Video Styling */
+.Cover.Video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease; 
+}
+
+/* Hover Effect */
+.Branding:hover .Cover.Photo img {
+    opacity: 0;
+    pointer-events: none; /* Prevent the image from being clickable */
+}
+
+.Branding:hover .Cover.Video video {
+    opacity: 1;
+    pointer-events: auto; /* Allow video interaction */
+}
+/* Unique branding tablet view */
+@media only screen and (max-width: 1024px) {
+    .UniqueBranding {
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 50px;
+        height: auto;
+    }
+
+    .Branding {
+        width: 90%;
+        height:90%;                                                                                  
+    }
+
+    .Cover.Photo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .Cover.Video video {
+        height: auto;
+    }
+}
+
+/* Unique branding mobile view */
+@media only screen and (max-width: 390px){
+    .UniqueBranding {
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 50px;
+        height: auto;
+    }
+    .Branding {
+        width: 90%;
+        height:90%;                                                                                  
+    }
+
+    .Cover.Photo img {
+        width: 100%;
+        height: auto;
+    }
+    .Cover.Video video {
+        height: auto;
+    }
+}
+
+/* for form validation */
+.success{
+    background-color: green;
+    color:white;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+.error{
+    background-color: red;
+    color:white;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+.accepted{
+    border: 3px solid green;
+}
+.rejected{
+    border: 3px solid red;
+}
+input:focus{
+    outline: none;
+}
+span{
+    z-index: 50000;
+    height: auto;
+
+}

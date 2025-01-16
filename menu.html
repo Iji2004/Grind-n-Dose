@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grind&Dose.com</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Fascinate+Inline&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+ /* nav bar */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+html, body {
+    overflow-x: hidden;
+    background-color: beige;
+    width: 100%;
+    height: auto;
+    background-image: url('menuSource/concrete bg vert.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center; 
+    margin: 0;
+}
+
+
+/* Secondary Navigation */
+.secondary-nav {
+    background-color: #151515; 
+    position: fixed;
+    right: 3px;
+    top: 60px; 
+    width: 100%;
+    height: 50px;
+    display: flex;
+    padding: 0 0px;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-nav ul {
+    display: flex;
+    gap: 10px; /* Spacing between links */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.secondary-nav ul li {
+    margin: 0;
+    padding: 0;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.secondary-nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 1px;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.secondary-nav ul li a:hover {
+    color: bisque;
+}
+
+.secondary-nav ul li a.active {
+    color: bisque;
+    font-weight: bold;
+}
+
+.secondary-nav ul li:nth-child(3) a {
+    background-color: #f7e0bd; /* Highlight with an orange color */
+    color: rgb(19, 19, 19); /* Text color */
+    font-weight: bold; /* Make text bold */
+    padding: 17px 30px; 
+    text-align: center; 
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
+}
+
+.secondary-nav ul li:nth-child(3) a:hover {
+    background-color: #ffffff; /* Slightly lighter orange on hover */
+}
+
+@media only screen and (max-width: 768px) { 
+    .secondary-nav ul li a {
+    font-size: 11px;
+    padding: 10px 0px;
+}
+.secondary-nav ul li {
+    text-align: center;
+    justify-self: center;
+}
+.secondary-nav ul li {
+    padding: 20px 10px;
+}
+}
+
+@media only screen and (max-width: 425px) { 
+    .secondary-nav ul li {
+    font-size: 14px;
+    padding: 20px 10px;
+}
+.secondary-nav ul li {
+    text-align: center;
+    justify-self: center;
+}
+}
+
+
+nav {
+    background-color:#151515;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+}
+
+.nav-buttons {
+    font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    display: flex;
+    justify-content: center; /* Center buttons */
+    align-items: center;
+    gap: 20px; /* Add space between buttons */
+    flex: 1;
+    /* background-color: #a58b5a; */
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-buttons a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 0%;
+    height: 2px;
+    background-color: bisque;
+    transition: width 0.3 ease;
+}
+.nav-buttons a:hover {
+    color: bisque;
+}
+.nav-buttons a:hover::after{
+    width: 100%;
+}
+
+.nav-buttons a.active{
+    color:bisque;
+}
+.nav-buttons a.active::after{
+    width: 100%;
+    height: 30px;
+}
+.account-icon-container{
+    /* background-color: #985935; */
+    width:auto;
+}
+.account-icon-container img{
+    width: 40px;
+}
+.account-icon-container:active{
+    transform: scale(0.90);
+}
+.AccountIcon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:auto;
+    height: auto;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* sign in/sign up */
+.modal{
+        display:none;
+        position: fixed;
+        z-index: 2000;
+        padding-top: 70px;
+        left:0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0,0,0,0.5);
+    }
+
+.modal-content{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #e6dbdb;
+    margin: auto;
+    border: 1px solid #888;
+    width: 80%;
+    max-width:100%;
+    min-height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.close{
+    display:flex;
+    align-items:center ;
+    justify-content: center;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bolder;
+    z-index: 500;
+    width:37px;
+    background: transparent;
+    border-radius:20px;
+    border: 2px solid rgb(255, 255, 255);
+}
+.close:hover, .close:focus{
+    color:#a58b5a;
+    border: 2px solid #a58b5a;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close:active{
+    transform: scale(0.90);
+}
+button {
+  padding: 10px;
+}
+
+/* sign In / sign modal*/
+.sign-up, .sign-in{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+.sign-up{
+    width: 50%;
+    opacity: 1;
+    z-index: 7;
+}
+
+.sign-in{
+    width: 50%;
+    z-index: 2;
+}
+
+form {
+    background: rgb(175, 175, 175);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+ form h1 {
+    font-weight: bold;
+    margin: 0;
+    color: #000000;
+}
+.modal p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 15px 0 20px;
+}
+input {
+    background: transparent;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid black;
+    color: #000000;
+    outline: none;
+}
+input::placeholder{
+    color: #000000;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.modal button{
+    color: #fff;
+    background: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 55px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    outline: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 80ms ease-in;
+    cursor: pointer;
+}
+button:active {
+    transform: scale(0.90);
+}
+#signIn, #signUp {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+.modal-content.right-panel-active .sign-in {
+    transform: translateX(100%);
+}
+.modal-content.right-panel-active .sign-up {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 5;
+}
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+.modal-content.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+.overlay {
+    position: relative;
+    color: #fff;
+    background-color: #000000;
+    /* background-image: url("modalPic.jpg"); */
+    background-repeat: no-repeat;
+    object-fit: contain;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transition: transform 0.6s ease-in-out;
+}
+.modal-content.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+.overlay-left, .overlay-right {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.modal-content.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.modal-content.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+/* sign up/ sign in mobile view */
+@media only screen and (max-width: 390px) {
+    .modal {
+    padding-top:20px;
+    min-height: 700px;
+    height: auto;
+    }
+
+    .modal-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column; /* Stack in column formation */
+        position: relative;
+        width: 80%;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        min-height:90vh; /* Adjust for full-screen height */
+        height: 100%;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    /* Overlay container at the top */
+    .overlay-container {
+       height: 40vh;
+       width: 100%;
+       left:0;
+    
+    }
+    .overlay{
+        border: solid peachpuff;
+        box-sizing: border-box;
+    }
+
+    .overlay-container h1 {
+        margin: 10px 0;
+    }
+
+    .overlay-container p {
+        font-size: 14px;
+    }
+
+    .overlay-container button {
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-wrapper{
+        flex:1;
+        width: 100%;
+        height: auto;
+        display: flex;
+        /* flex-direction: column;  */
+        align-items: center;
+        justify-content: flex-start;
+        border: solid black;
+        margin-top: 40vh;
+    }
+
+    /* Forms at the bottom */
+    .sign-up,
+    .sign-in {
+        position: relative; /* Avoid absolute positioning for column layout */
+        width: 100%;
+        text-align: center;
+        background: #f9f9f9;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        height: auto;
+    }
+    .sign-up{
+        /* width: 2000px; */
+        height: 100%;
+        border: solid rgb(129, 202, 218);
+    }
+
+    .sign-in{
+       border: solid orange;
+        height: 445px;
+    }
+    
+
+    form input {
+        margin: 10px 0;
+        padding: 12px 15px;
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .modal-content.right-panel-active .overlay-container {
+    transform: translateX(0%);
+    }
+    .modal-content.right-panel-active .sign-in {
+    transform: translateX(-100%);
+}
+}
+
+
+.links-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+    display: none;
+}
+
+
+/* nav tablet view */
+@media only screen and (max-width: 1024px){
+    body{
+        background-color: black
+    }
+}
+/*  nav Mobile View */
+@media only screen and (max-width: 390px) {
+    body{
+        background-color: black;
+    }
+    .links-container {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100%;
+        background-color: black;
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        border: 0.5px solid grey;
+        z-index: 10;
+        transition: right 0.3s ease-in-out;
+    }
+
+    nav {
+        padding: 0 20px;
+        height: 60px;
+        /* background-color: black; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .account-icon-container {
+        /* background-color: #985935; */
+        position: relative; 
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        width: 50px;
+        height: 60px;
+    }
+
+    .account-icon-container button{
+        /* background-color: aqua; */
+       z-index: 100;
+    }
+    .account-icon-container:active {
+        transform: scale(0);
+    }
+
+    .AccountIcon {
+        width: 100%; /* Matches container size */
+        height: 100%;
+        position: relative; /* Aligns icon within container */
+        top: 5px; 
+        left: 110px; 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        outline: none;
+        z-index: 2000;
+    }
+
+    .logo{
+        width:300px;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+    }
+    .logo img{
+        width: 100%;
+        height: 100%;
+    }
+    .open-sidebar-button {
+        display: block; /* Show the open button */
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+   
+    .close-sidebar-button {
+        display: block; /* Hide initially */
+        position: absolute;
+        top:15px;
+        left: 15px;
+        cursor: pointer;
+        padding: 10px;
+        animation: none;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0; /* Slide in sidebar */
+    }
+
+    #sidebar-active:checked + .open-sidebar-button {
+        display: none; /* Hide open button when sidebar is active */
+    }
+
+    #sidebar-active:checked ~ .links-container .close-sidebar-button {
+        display: block;
+    }
+
+    .close-sidebar-button.animate {
+        animation: rotate 0.3s ease-in-out;
+    }
+    
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+     /* Add transition for smooth menu close */
+     #sidebar-active:not(:checked) ~ .links-container .close-sidebar-button {
+        animation: none;
+    }
+
+
+    #sidebar-active:checked ~ #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        width: 100%;
+        position: absolute;
+        top:80px;
+    }
+    .nav-buttons a:hover::after{
+        width: 34%;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 15px 20px;
+        text-align: left;
+        color: white;
+        box-sizing: border-box;
+    }
+    
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom: 0;
+    margin-top: 70px;
+    background-color: blue;
+}
+
+.footer-container {
+    background-color: #151515;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center; 
+   align-content: center;
+    box-sizing: border-box;
+}
+
+/* Left Footer Section */
+.Left-Section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: aquamarine; */
+    width: 100%;
+    align-items: center;
+   
+}
+.F-upperLeft {
+    width: 300px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    text-align: left;
+    color: white;
+    z-index: 500;
+}
+
+.F-lowerLeft{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    pointer-events: auto;
+}
+
+.Soc-Username{
+    display: flex;
+    align-items: center; 
+    color: white;
+    font-size: large;
+}
+
+.Socmed-Icons{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2000;
+}
+.Socmed a{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-decoration: none;
+    width: 51px;
+    height: auto;
+    cursor: pointer;
+    z-index: 2000;
+    border:  red;
+}
+.Facebook{
+    position:relative;
+    bottom:0;
+}
+
+.Instagram{
+    position: relative;
+}
+
+.Tiktok{
+    position: relative;
+}
+
+/* Middle Section */
+.FLogo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.FLogo img {
+    width: 300px;
+    height: auto;
+}
+
+/* Right Footer Section */
+.Right-Section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: brown; */
+    width: 100%;
+    
+}
+.F-lowerRight {
+    width:300px;
+    display: flex;
+ 
+    text-align: right;
+    align-items: fle;
+    color: white;
+   
+}
+
+.F-upperRight {
+    /* background-color: #985935; */
+    width: 300px;
+    text-align: right;
+    display: flex;
+    align-items: flex-end; 
+    color: white; 
+} 
+
+/* Footer mobile view */
+@media only screen and (max-width: 390px){
+
+    footer{
+        background-color: aqua;
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+   .footer-container{
+    /* background-color: darkgray; */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+   }
+
+   .FLogo{
+       /* background-color: #985935; */
+       order:1;
+       display: flex;
+      justify-content: center;
+       width: 100%;
+       height: auto;
+       text-align: center;
+       /* border: solid white; */
+   }
+
+   .Flogo img{
+    background-color: black;
+    width: 400px;
+    height: auto;
+    /* align-content: center; */
+    /* border: solid black; */
+
+   }
+
+   .Left-Section{
+    display: flex;
+    /* border: 3px solid black; */
+    order: 3;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   }
+
+   .Right-Section{
+    order: 2;
+   }
+
+   .F-upperRight{
+        /* background-color:chocolate; */
+        text-align: center;
+        padding-bottom: 20px;
+   }
+
+   .F-lowerRight{
+       /* background-color: chartreuse; */
+       text-align: center;
+       padding-bottom: 20px;
+   }
+
+   .F-upperLeft{
+   /* background-color: darkslateblue; */
+   text-align: center;
+   font-size:small ;
+   display: flex;
+   align-items: center;
+   padding-bottom: 20px;
+   }
+
+   .F-lowerLeft{
+    /* background-color: brown; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+   }
+
+   .Soc-Username{
+    padding-bottom: 10px;
+   }
+
+   .Socmed-Icons{
+    /* border: solid  #151515; */
+    width: auto;
+   }
+
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation -->
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="white"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links-container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="white"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+
+            <div class="logo"><a href ="index.html"><img src="WebResources/logo white.png" width="70px" height="auto"></a></div>
+
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="About Us.html" class="nav-link">About us</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="contacts.html" class="nav-link">Contacts</a>
+            </div>
+
+            <div class="account-icon-container">
+                <button id="accountIcon" class="AccountIcon" title="Account">
+                  <img src="WebResources/AccountIcon.svg" alt="Account Icon">
+                </button>
+            </div>
+            <span class="navbar-username"></span>
+
+        <!-- signUp/signIn modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content" id="modal-container">
+                    <span class="close">&times;</span>
+                    <div class="formers">
+                        <div class="form-wrapper">
+                            <div class="sign-up">
+                                <form id="signUpForm" action="#" class="Create">
+                                    <h1>Create Account</h1>
+                                    <p>or use your email for registration</p>
+                                    <input type="text" name="username" id="username"placeholder="Username" required>
+                                    <input type="email" name="email" id="email"placeholder="email" required>
+                                    <input type="password" name="pass" id="password" placeholder="password" required>
+                                    <input type="password" name="confPass" id="confirmPassword" placeholder="Confirm password" required>
+                                    <span></span>
+                                    <button type="submit">Sign Up</button>
+                                </form>
+                            </div>
+
+                            <div class="sign-in">
+                                <form action="#" class="LogIn">
+                                    <h1>Sign In</h1>
+                                    <p>or use your account</p>
+                                    <input type="text" name="username" placeholder="Username" required>
+                                    <input type="password" name="pswd" placeholder="Password" required>
+                                    <span></span>
+                                    <button type="submit">Sign In</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overlay-container">
+                        <div class="overlay">
+                            <div class="overlay-left">
+                                <h1>Welcome Back</h1>
+                                <p>To keep connected with us, please login with your personal info</p>
+                                <p>Don't have an account yet?<br>Click the sign up button to register</p>
+                                <button id="signIn">Sign Up</button>
+                            </div>
+                            <div class="overlay-right">
+                                <h1>Hello, Friend</h1>
+                                <p>Enter your personal details and start your journey with us</p>
+                                <p>Already have an account?<br>Click sign in to enter your account</p>
+                                <button id="signUp">Sign In</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+   
+
+    <!-- Secondary Navigation -->
+    <div class="secondary-nav">
+        <ul>
+            <li><a href="#espresso-based">Espress-Based</a></li>
+            <li><a href="#non-espresso">Non-Espresso</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleCart()">Cart</a></li>
+            <li><a href="#signature-fizz">Signature Fizz</a></li>
+            <li><a href="#cold-brew">Cold Brew</a></li>
+        </ul>
+    </div>
+    
+</div>
+    <!-- Main Content -->
+    <main class="WebContainer">
+        <!-- Drink of the Month Section -->
+        <div class="drink-of-the-month">
+            <div class="drink-info">
+                <div class="drinktitle">
+                    <h1>DRINK OF THE MONTH</h1>
+                </div>
+                <div class="ContainerDOFTM">
+                    <div class="DNAME">
+                        <div class="drink-name">
+                            <span class="label">LOVE POTION</span>
+                            <span class="price">PHP 180</span>
+                        </div>
+                    </div>
+                    <div class="description-container">
+                        <p class="description">
+                            This month, try our secret "Drink of Love" available by request at the cashier. Don’t miss out; it’s here for a limited time only!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="drink-image">
+                <img src="menuSource/love potion.jpg" alt="Love Potion Drink">
+            </div>
+        </div>
+
+        <div class="indication">
+            <div class="hot-tag">
+                <div class="icon-wrapper">
+                    <img src="menuSource/Hot.png" alt="Hot">
+                </div>
+                <h1>HOT</h1>
+            </div>
+            <div class="cold-tag">
+                <div class="icon-wrapper">
+                    <img src="menuSource/Cold.png" alt="Cold">
+                </div>
+                <h1>COLD</h1>
+            </div>
+        </div>
+        
+
+        <!-- Espresso Section -->
+        <section id="espresso-based">
+            <h2>ESPRESSO-BASED</h2>
+            <div class="PContainer">
+                <!-- Americano -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Americano.png" alt="Americano">
+                    </div>
+                    <h3>Americano</h3>
+                    <p class="description">Hot, Cold</p>
+                    <p class="price">P120</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="hot" onclick="addToCart('Americano (Hot)', 120)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                            <button class="cold" onclick="addToCart('Americano (Cold)', 120)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latte -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Latte.png" alt="Latte">
+                    </div>
+                    <h3>Latte</h3>
+                    <p class="description">Hot, Cold</p>
+                    <p class="price">P150</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="hot" onclick="addToCart('Latte (Hot)', 150)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                            <button class="cold" onclick="addToCart('Latte (Cold)', 150)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/No image.jpg" alt="Night Owl">
+                    </div>
+                    <h3>Night Owl</h3>
+                    <p class="description">Cold</p>
+                    <p class="price">P175</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Night Owl (Cold)', 175)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spanish Latte -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Spanish Latte.JPG" alt="Spanish Latte">
+                    </div>
+                    <h3>Spanish Latte</h3>
+                    <p class="description">Hot, Cold</p>
+                    <p class="price">P180</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="hot" onclick="addToCart('Spanish Latte (Hot)', 180)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                            <button class="cold" onclick="addToCart('Spanish Latte (Cold)', 180)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Muddy Berry -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Muddy Berry.JPG" alt="Muddy Berry">
+                    </div>
+                    <h3>Muddy Berry</h3>
+                    <p class="description">Cold</p>
+                    <p class="price">P175</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Muddy Berry (Cold)', 175)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dirty Chai -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/No image.jpg" alt="Dirty Chai">
+                    </div>
+                    <h3>Dirty Chai</h3>
+                    <p class="description">Cold</p>
+                    <p class="price">P180</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Dirty Chai (Cold)', 180)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Black Mocha -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Black Mocha.JPG" alt="Dirty Chai">
+                    </div>
+                    <h3>Black Mocha</h3>
+                    <p class="description">Hot, Cold</p>
+                    <p class="price">P185</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Black Mocha (Cold)', 180)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                            <button class="hot" onclick="addToCart('Black Mocha (Hot)', 180)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>  
+
+                <!-- Salted Caramel Oat -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Salted Caramel Oat.JPG" alt="Salted Caramel Oat">
+                    </div>
+                    <h3 class="Exceed">Salted Caramel Oat</h3>
+                    <p class="description">Hot, Cold</p>
+                    <p class="price">P185</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Salted Caramel Oat (Cold)', 185)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                            <button class="hot" onclick="addToCart('Salted Caramel Oat (Hot)', 185)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>  
+
+                <!-- Cinnamon Honey -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Salted Caramel Oat.JPG" alt="Cinnamon Honey">
+                    </div>
+                    <h3 class="Exceed">Cinnamon Honey</h3>
+                    <p class="description">Hot, Cold</p>
+                    <p class="price">P185</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Cinnamon Honey (Cold)', 185)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                            <button class="hot" onclick="addToCart('Cinnamon Honey (Hot)', 185)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- Early Bird -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Early Bird.JPG" alt="Early Bird">
+                    </div>
+                    <h3 class="Exceed">Early Bird</h3>
+                    <p class="description">Hot, Cold</p>
+                    <p class="price">P175</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Early Bird (Cold)', 175)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                            <button class="hot" onclick="addToCart('Early Bird (Hot)', 175)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- Einspinner -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/No image.jpg" alt="Einspinner">
+                    </div>
+                    <h3 class="Exceed">Einspinner</h3>
+                    <p class="description">Hot, Cold</p>
+                    <p class="price">P150</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Einspinner (Cold)', 150)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                            <button class="hot" onclick="addToCart('Einspinner (Hot)', 150)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- Dirty White -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Dirty White.png" alt="Dirty White">
+                    </div>
+                    <h3 class="Exceed">Dirty White</h3>
+                    <p class="description">Cold</p>
+                    <p class="price">P150</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Dirty White (Cold)', 150)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- Mazagran -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/No image.jpg" alt="Mazagran">
+                    </div>
+                    <h3 class="Exceed">Mazagran</h3>
+                    <p class="description">Cold</p>
+                    <p class="price">P165</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Mazagran (Cold)', 165)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tropicano -->
+                <div class="CARD">
+                    <div class="imgbx">
+                        <img src="menuSource/Tropicana.png" alt="Tropicano">
+                    </div>
+                    <h3 class="Exceed">Tropicano</h3>
+                    <p class="description">Cold</p>
+                    <p class="price">P165</p>
+                    <div class="card-actions">
+                        <div class="buttons">
+                            <button class="cold" onclick="addToCart('Tropicano (Cold)', 165)">
+                                <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+            <!-- end div-->    
+            </div>
+        </section>
+        
+
+        <!-- Non-Espresso Section -->
+        <section id="non-espresso">
+            <h2>NON-ESPRESSO</h2>
+            <div class="PContainer">
+
+            <!-- Chai Latte -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/Chai Latte.JPG" alt="Chai Latte">
+                </div>
+                <h3>Chai Latte</h3>
+                <p class="description">Hot, Cold</p>
+                <p class="price">P150</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Chai Latte (Cold)', 150)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                        <button class="hot" onclick="addToCart('Chai Latte (Hot)', 150)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Berry latte -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/Berry Latte.png" alt="Berry latte">
+                </div>
+                <h3>Berry latte</h3>
+                <p class="description">Cold</p>
+                <p class="price">P150</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Berry latte (Cold)', 150)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Black Cocoa Fudge -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/No image.jpg" alt="Black Cocoa Fudge">
+                </div>
+                <h3 class="Exceed">Black Cocoa Fudge</h3>
+                <p class="description">Hot, Cold</p>
+                <p class="price">P150</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Black Cocoa Fudge (Cold)', 150)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                        <button class="hot" onclick="addToCart('Black Cocoa Fudge (Hot)', 150)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- Matcha Latte -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/Matcha Latte.png" alt="Matcha Latte">
+                </div>
+                <h3>Matcha Latte</h3>
+                <p class="description">Hot, Cold</p>
+                <p class="price">P160</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Matcha Latte (Cold)', 160)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                        <button class="hot" onclick="addToCart('Matcha Latte (Hot)', 160)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+        <!-- Signature Fizz Section -->
+        <section id="signature-fizz">
+            <h2>SIGNATURE FIZZ</h2>
+            <div class="PContainer">
+
+                <!-- Black Cold Brew -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/No image.jpg" alt="Black Cold Brew">
+                </div>
+                <h3>Black Cold Brew</h3>
+                <p class="description">Cold</p>
+                <p class="price">P150</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Black Cold Brew (Cold)', 150)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Cold Brew Latte -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/Cold Brew Latte.png" alt="Cold Brew Latte">
+                </div>
+                <h3>Cold Brew Latte</h3>
+                <p class="description">Cold</p>
+                <p class="price">P160</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Cold Brew Latte (Cold)', 160)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Vanilla Cream -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/No image.jpg" alt="Vanilla Cream">
+                </div>
+                <h3>Vanilla Cream</h3>
+                <p class="description">Cold</p>
+                <p class="price">P175</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Vanilla Cream (Cold)', 175)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+        <!-- Signature Fizz -->
+        <section id="cold-brew">
+            <h2>COLD BREW</h2>
+            <div class="PContainer">
+
+            <!--  Chai Soda -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/Chai Soda.JPG" alt="Chai Soda">
+                </div>
+                <h3>Chai Soda</h3>
+                <p class="description">Cold</p>
+                <p class="price">P120</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Chai Soda (Cold)', 120)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Berry lemon -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/Berry Lemon Fizz.JPG" alt="Berry lemon">
+                </div>
+                <h3>Berry lemon</h3>
+                <p class="description">Cold</p>
+                <p class="price">P120</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Berry lemon (Cold)', 120)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Mango lemon -->
+            <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/Mango Lemon.png" alt="Mango lemon">
+                </div>
+                <h3>Mango lemon</h3>
+                <p class="description">Cold</p>
+                <p class="price">P120</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Mango lemon (Cold)', 120)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <!--  Vanilla Cream Cola -->
+             <div class="CARD">
+                <div class="imgbx">
+                    <img src="menuSource/No image.jpg" alt="Vanilla Cream Cola">
+                </div>
+                <h3 class="Exceed">Vanilla Cream Cola</h3>
+                <p class="description">Cold</p>
+                <p class="price">P120</p>
+                <div class="card-actions">
+                    <div class="buttons">
+                        <button class="cold" onclick="addToCart('Vanilla Cream Cola (Cold)', 120)">
+                            <img src="menuSource/add-to-cart.png" alt="Add to cart">
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+   <!-- footer -->
+<footer>
+    <div class="footer-container">
+
+        <div class="Left-Section">
+            <div class="F-upperLeft">
+                49 Dahlia Ave, Corner Jaguar, Weat<br>
+                Fairview, Quezon, Philippines
+            </div>
+        
+                <div class="F-lowerLeft">
+                <div class="Soc-Username"><p>@grindanddoseph</p></div>
+                <div class="Socmed-Icons">
+                    <a href="https://www.facebook.com/grindanddoseph" target="_blank" class="Socmed Facebook" title="Facebook"><img src="WebResources/FACEBOOK ICON.png" alt="Facebook" width="51px" height="auto"></a>
+    
+                    <a href="https://www.instagram.com/grindanddoseph?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="-blank" class="Socmed Instagram" title="Instagram"><img src="WebResources/INSTAGRAM ICON.png" alt="Instagram" width="53px" height="auto"></a>
+
+                    <a href="https://www.tiktok.com/@grindanddoseph?is_from_webapp=1&sender_device=pc" target="__blank" class="Socmed Tiktok" title="Tiktok"><img src="WebResources/TIKTOK ICON.png" alt="Tiktok" width="35px" height="auto"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="FLogo"><img src="WebResources/logo white.png" alt="Footer Logo"></div>
+ 
+        <div class="Right-Section">
+
+            <div class="F-upperRight">
+                Copyright © 2024-2025 [Grind and Dose]. All<br>
+                Right Reserved. This website is for educational<br>
+                purposes only. Unauthorized use or distribution or<br>
+                the content on this site is prohibited.
+            </div>
+            <div class="F-lowerRight">
+                The content provided on this website, including text,<br>
+                graphics, and images, is for informational purposes<br>
+                and does not constitute professional advice.
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="menu.js"></script>
+
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="overlay" id="overlay"></div>
+<div class="cart-container" id="container cart">
+    <div class="cart-modal" id="cartModal">
+      <h2>Your Cart</h2>
+      <ul id="cartItems">
+        <li>Your cart is empty.</li>
+      </ul>
+      <p id="cartTotal">Total: PHP 0.00</p>
+      <div class="cart-actions">
+        <div class="SubmitOrder">
+        <button onclick="submitOrder()">Submit Order</button>
+        </div>
+        <div class="ClearOrder">
+        <button onclick="clearCart()">Clear Order</button>
+        </div>
+        <div class="Close">
+        <button onclick="toggleCart()">X</button>
+        </div>
+      </div>
+    </div>
+</div>   
+<script src="menu.js"></script>
+
+<script>
+let cart = [];
+
+// Function to add items to the cart
+function addToCart(item, price) {
+  const existingItem = cart.find(cartItem => cartItem.item === item);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+    existingItem.totalPrice += price;
+  } else {
+    cart.push({ item, price, quantity: 1, totalPrice: price });
+  }
+
+  alert(`${item} added to cart!`);
+}
+
+// Function to toggle the modal and overlay
+function toggleCart() {
+  const modal = document.getElementById('cartModal');
+  const overlay = document.getElementById('overlay');
+
+  if (modal.style.display === 'block') {
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+  } else {
+    displayCartItems();
+    modal.style.display = 'block';
+    overlay.style.display = 'block';
+  }
+}
+
+// Function to display cart items in the modal
+function displayCartItems() {
+  const cartItems = document.getElementById('cartItems');
+  const cartTotal = document.getElementById('cartTotal');
+  cartItems.innerHTML = '';
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = '<li>Your cart is empty.</li>';
+    cartTotal.textContent = 'Total: PHP 0.00';
+    return;
+  }
+
+  let total = 0;
+
+  cart.forEach((item) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${item.item} x${item.quantity} - PHP ${item.totalPrice.toFixed(2)}`;
+    cartItems.appendChild(listItem);
+    total += item.totalPrice;
+  });
+
+  cartTotal.textContent = `Total: PHP ${total.toFixed(2)}`;
+}
+
+function submitOrder() {
+  if (cart.length === 0) {
+    alert("Your cart is empty. Please add items to your cart before submitting.");
+    return;
+  }
+
+  // Simulate submitting the order
+  alert("Order submitted successfully!");
+  clearCart(); // Clear the cart after submitting the order
+}
+
+function clearCart() {
+  cart = []; // Reset the cart array
+  displayCartItems(); // Update the modal display
+  alert("Your cart has been cleared.");
+}
+
+
+</script>
+
+</body>
+</html>
