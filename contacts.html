@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grind&Dose.com</title>
+    <link rel="stylesheet" href="contacts.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Assistant:wght@200..800&family=Bakbak+One&family=Fascinate+Inline&family=Goblin+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Suwannaphum:wght@100;300;400;700;900&display=swap');
+
+
+    /* nav bar */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('menuSource/concrete bg vert.jpg'); 
+    width: 100%;
+    height: auto;
+}
+
+nav {
+    background-color:#151515;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+}
+
+.nav-buttons {
+    font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    display: flex;
+    justify-content: center; /* Center buttons */
+    align-items: center;
+    gap: 20px; /* Add space between buttons */
+    flex: 1;
+    /* background-color: #a58b5a; */
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-buttons a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 0%;
+    height: 2px;
+    background-color: bisque;
+    transition: width 0.3 ease;
+}
+.nav-buttons a:hover {
+    color: bisque;
+}
+.nav-buttons a:hover::after{
+    width: 100%;
+}
+
+.nav-buttons a.active{
+    color:bisque;
+}
+.nav-buttons a.active::after{
+    width: 100%;
+    height: 30px;
+}
+.account-icon-container{
+    /* background-color: #985935; */
+    width:auto;
+}
+.account-icon-container img{
+    width: 40px;
+}
+.account-icon-container:active{
+    transform: scale(0.90);
+}
+.AccountIcon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:auto;
+    height: auto;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* sign in/sign up */
+.modal{
+        display:none;
+        position: fixed;
+        z-index: 20000;
+        padding-top: 70px;
+        left:0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0,0,0,0.55);
+    }
+
+.modal-content{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 80%;
+    max-width:100%;
+    min-height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.close{
+    display:flex;
+    align-items:center ;
+    justify-content: center;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bolder;
+    z-index: 500;
+    width:37px;
+    background: transparent;
+    border-radius:20px;
+    border: 2px solid rgb(255, 255, 255);
+}
+.close:hover, .close:focus{
+    color:#a58b5a;
+    border: 2px solid #a58b5a;
+    text-decoration: none;
+    cursor: pointer;
+}
+.close:active{
+    transform: scale(0.90);
+}
+button {
+  padding: 10px;
+}
+
+/* sign In / sign modal*/
+.sign-up, .sign-in{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+.sign-up{
+    width: 50%;
+    opacity: 1;
+    z-index: 7;
+}
+
+.sign-in{
+    width: 50%;
+    z-index: 2;
+}
+
+form {
+    background: rgb(175, 175, 175);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+.modal p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 15px 0 20px;
+}
+input {
+    background: transparent;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid black;
+    color: #000000;
+    outline: none;
+}
+input::placeholder{
+    color: #000000;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.modal button{
+    color: #fff;
+    background: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 55px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    outline: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 80ms ease-in;
+    cursor: pointer;
+}
+button:active {
+    transform: scale(0.90);
+}
+#signIn, #signUp {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+.modal-content.right-panel-active .sign-in {
+    transform: translateX(100%);
+}
+.modal-content.right-panel-active .sign-up {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 5;
+}
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+.modal-content.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+.overlay {
+    position: relative;
+    color: #fff;
+    background-color: #000000;
+    /* background-image: url("modalPic.jpg"); */
+    background-repeat: no-repeat;
+    object-fit: contain;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transition: transform 0.6s ease-in-out;
+}
+.modal-content.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+.overlay-left, .overlay-right {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.modal-content.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.modal-content.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+/* sign up/ sign in mobile view */
+@media only screen and (max-width: 390px) {
+    .modal {
+    padding-top:20px;
+    min-height: 700px;
+    height: auto;
+    }
+
+    .modal-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column; 
+        position: relative;
+        width: 80%;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        min-height:90vh; 
+        height: 100%;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    /* Overlay container at the top */
+    .overlay-container {
+       height: 40vh;
+       width: 100%;
+       left:0;
+    }
+    .overlay{
+        border: solid peachpuff;
+        box-sizing: border-box;
+    }
+
+    .overlay-container h1 {
+        margin: 10px 0;
+    }
+
+    .overlay-container p {
+        font-size: 14px;
+    }
+
+    .overlay-container button {
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-wrapper{
+        flex:1;
+        width: 100%;
+        height: auto;
+        display: flex;
+        /* flex-direction: column;  */
+        align-items: center;
+        justify-content: flex-start;
+        border: solid black;
+        margin-top: 40vh;
+    }
+
+    /* Forms at the bottom */
+    .sign-up,
+    .sign-in {
+        position: relative; 
+        width: 100%;
+        text-align: center;
+        background: #f9f9f9;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        height: auto;
+    }
+    .sign-up{
+        /* width: 2000px; */
+        height: 100%;
+        border: solid rgb(129, 202, 218);
+    }
+
+    .sign-in{
+       border: solid orange;
+        height: 445px;
+    }
+    
+
+    form input {
+        margin: 10px 0;
+        padding: 12px 15px;
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .modal-content.right-panel-active .overlay-container {
+    transform: translateX(0%);
+    }
+    .modal-content.right-panel-active .sign-in {
+    transform: translateX(-100%);
+}
+}
+
+
+.links-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+    display: none;
+}
+
+
+/* nav tablet view */
+@media only screen and (max-width: 1024px){
+    body{
+        background-color: black
+    }
+}
+/*  nav Mobile View */
+@media only screen and (max-width: 390px) {
+    body{
+        background-color: black;
+    }
+    .links-container {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100%;
+        background-color: black;
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        border: 0.5px solid grey;
+        z-index: 10;
+        transition: right 0.3s ease-in-out;
+    }
+
+    nav {
+        padding: 0 20px;
+        height: 60px;
+        /* background-color: black; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .account-icon-container {
+        /* background-color: #985935; */
+        position: relative; 
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        width: 50px;
+        height: 60px;
+    }
+
+    .account-icon-container button{
+       z-index: 100;
+    }
+    .account-icon-container:active {
+        transform: scale(0);
+    }
+
+    .AccountIcon {
+        width: 100%; 
+        height: 100%;
+        position: relative; 
+        top: 5px; 
+        left: 110px; 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        outline: none;
+        z-index: 2000;
+    }
+
+    .logo{
+        width:300px;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+    }
+    .logo img{
+        width: 100%;
+        height: 100%;
+    }
+    .open-sidebar-button {
+        display: block; 
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+   
+    .close-sidebar-button {
+        display: block; 
+        position: absolute;
+        top:15px;
+        left: 15px;
+        cursor: pointer;
+        padding: 10px;
+        animation: none;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0; 
+    }
+
+    #sidebar-active:checked + .open-sidebar-button {
+        display: none; 
+    }
+
+    #sidebar-active:checked ~ .links-container .close-sidebar-button {
+        display: block;
+    }
+
+    .close-sidebar-button.animate {
+        animation: rotate 0.3s ease-in-out;
+    }
+    
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+     /* Add transition for smooth menu close */
+     #sidebar-active:not(:checked) ~ .links-container .close-sidebar-button {
+        animation: none;
+    }
+
+
+    #sidebar-active:checked ~ #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        width: 100%;
+        position: absolute;
+        top:80px;
+    }
+    .nav-buttons a:hover::after{
+        width: 34%;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 15px 20px;
+        text-align: left;
+        color: white;
+        box-sizing: border-box;
+    }
+    
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom: 0;
+    margin-top: 70px;
+    background-color: blue;
+}
+
+.footer-container {
+    background-color: #151515;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center; 
+   align-content: center;
+    box-sizing: border-box;
+}
+
+/* Left Footer Section */
+.Left-Section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: aquamarine; */
+    width: 100%;
+    align-items: center;
+   
+}
+.F-upperLeft {
+    width: 300px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    text-align: left;
+    color: white;
+    z-index: 500;
+}
+
+.F-lowerLeft{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    pointer-events: auto;
+}
+
+.Soc-Username{
+    display: flex;
+    align-items: center; 
+    color: white;
+    font-size: large;
+}
+
+.Socmed-Icons{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2000;
+}
+.Socmed a{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-decoration: none;
+    width: 51px;
+    height: auto;
+    cursor: pointer;
+    z-index: 2000;
+    border:  red;
+}
+.Facebook{
+    position:relative;
+    bottom:0;
+}
+
+.Instagram{
+    position: relative;
+}
+
+.Tiktok{
+    position: relative;
+}
+
+/* Middle Section */
+.FLogo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.FLogo img {
+    width: 300px;
+    height: auto;
+}
+
+/* Right Footer Section */
+.Right-Section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: brown; */
+    width: 100%;
+    
+}
+.F-lowerRight {
+    width:300px;
+    display: flex;
+ 
+    text-align: right;
+    align-items: fle;
+    color: white;
+   
+}
+
+.F-upperRight {
+    /* background-color: #985935; */
+    width: 300px;
+    text-align: right;
+    display: flex;
+    align-items: flex-end; 
+    color: white; 
+} 
+
+/* Footer mobile view */
+@media only screen and (max-width: 390px){
+
+    footer{
+        background-color: aqua;
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+   .footer-container{
+    /* background-color: darkgray; */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+   }
+
+   .FLogo{
+       /* background-color: #985935; */
+       order:1;
+       display: flex;
+      justify-content: center;
+       width: 100%;
+       height: auto;
+       text-align: center;
+       /* border: solid white; */
+   }
+
+   .Flogo img{
+    background-color: black;
+    width: 400px;
+    height: auto;
+    /* align-content: center; */
+    /* border: solid black; */
+
+   }
+
+   .Left-Section{
+    display: flex;
+    /* border: 3px solid black; */
+    order: 3;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   }
+
+   .Right-Section{
+    order: 2;
+   }
+
+   .F-upperRight{
+        /* background-color:chocolate; */
+        text-align: center;
+        padding-bottom: 20px;
+   }
+
+   .F-lowerRight{
+       /* background-color: chartreuse; */
+       text-align: center;
+       padding-bottom: 20px;
+   }
+
+   .F-upperLeft{
+   /* background-color: darkslateblue; */
+   text-align: center;
+   font-size:small ;
+   display: flex;
+   align-items: center;
+   padding-bottom: 20px;
+   }
+
+   .F-lowerLeft{
+    /* background-color: brown; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+   }
+
+   .Soc-Username{
+    padding-bottom: 10px;
+   }
+
+   .Socmed-Icons{
+    /* border: solid  #151515; */
+    width: auto;
+   }
+
+}
+
+
+
+    </style>
+</head>
+<body>
+    <!--WEB NAVIGATION -->
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="white"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links-container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="white"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+
+
+            <div class="logo"><a href ="Contact.html"><img src="WebResources/logo white.png" width="70px" height="auto"></a></div>
+
+
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="About Us.html" class="nav-link">About us</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="Contact.html" class="nav-link">Contacts</a>
+            </div>
+   
+            <div class="account-icon-container">
+                <button id="accountIcon" class="AccountIcon" title="Account">
+                  <img src="WebResources/AccountIcon.svg" alt="Account Icon">
+                </button>
+            </div>
+            <span class="navbar-username"></span>
+
+
+        <!-- signUp/signIn modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content" id="modal-container">
+                    <span class="close">&times;</span>
+                    <div class="formers">
+
+
+                        <div class="form-wrapper">
+                            <div class="sign-up">
+                                <form id="signUpForm" action="#" class="Create">
+                                    <h1>Create Account</h1>
+                                    <p>or use your email for registration</p>
+                                    <input type="text" name="username" id="username"placeholder="Username" required>
+                                    <input type="email" name="email" id="email"placeholder="email" required>
+                                    <input type="password" name="pswd" id="password" placeholder="password" required>
+                                    <input type="password" name="confPswd" id="confirmPassword" placeholder="Confirm password" required>
+                                    <span></span>
+                                    <button type="submit">Sign Up</button>
+                                </form>
+                            </div>
+
+
+                            <div class="sign-in">
+                                <form action="#" class="LogIn">
+                                    <h1>Sign In</h1>
+                                    <p>or use your account</p>
+                                    <input type="email" name="email" placeholder="Email" required>
+                                    <input type="password" name="pswd" placeholder="Password" required>
+                                    <span></span>
+                                    <button type="submit">Sign In</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="overlay-container">
+                        <div class="overlay">
+                            <div class="overlay-left">
+                                <h1>Welcome Back</h1>
+                                <p>To keep connected with us, please login with your personal info</p>
+                                <p>Don't have an account yet?<br>Click the sign up button to register</p>
+                                <button id="signIn">Sign Up</button>
+                            </div>
+                            <div class="overlay-right">
+                                <h1>Hello, Friend</h1>
+                                <p>Enter your personal details and start your journey with us</p>
+                                <p>Already have an account?<br>Click sign in to enter your account</p>
+                                <button id="signUp">Sign In</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+   
+
+
+ 
+
+
+<!--MEET THE FOUNDER-->
+
+
+
+
+
+
+    <main class="WebContainer">
+       
+     
+        <div class="OuterContainer">
+            <div class="Contact">
+                <h1>CONTACTS</h1>
+            </div>  
+                <div class ="left-right-container">
+
+
+                    <div class ="LeftContainer">
+
+
+                        <div class="Map">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.272164602912!2d121.06264027487478!3d14.699959385798273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1839a007d99%3A0x589a166ec7841906!2sGrind%20%26%20Dose!5e1!3m2!1sen!2sph!4v1733978814649!5m2!1sen!2sph"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+
+                <div class="RightContainer">
+                    <img src = "ContactBanner.png">
+                <div class= "ContactDescription">
+                    <div class="contactCaption">
+                        <h1>CONTACT US</h1>
+                    </div>
+                    <div class="C-RightPart">
+
+
+                        <div class="C-UpperRight">
+                        <p> Operating Hours <br>
+                            New Store Hours<br>
+                        </p>
+                    </div>
+                    <div class="C-MiddleRight">
+                        <p>
+                            Moday-Thursday<br>
+                            1PM - 12AM <br>
+                        </p>
+                    </div>
+                    <div class="C-LowerRight">
+                        <p>
+                            Friday - Sunday<br>
+                            1PM - 10PM<br>
+                        </p>
+                    </div>
+                    </div>
+                   
+                    <div class="C-LeftPart">
+                        <div class="C-UpperLeft">
+                            <p>Address<br>
+                                49 Dahlia Ave, Corner Jaguar,
+                                West Fairview, Quezon Philippines
+                                </p>
+                            </div>
+                            <div class="C-MiddleLeft">
+                                <p>
+                                Email us at<br>
+                                grindanddose.ph@gmail.com<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+       
+    </main>
+
+
+<!-- footer -->
+<footer>
+    <div class="footer-container">
+
+
+        <div class="Left-Section">
+            <div class="F-upperLeft">
+                49 Dahlia Ave, Corner Jaguar, Weat<br>
+                Fairview, Quezon, Philippines
+            </div>
+       
+                <div class="F-lowerLeft">
+                <div class="Soc-Username"><p>@grindanddoseph</p></div>
+                <div class="Socmed-Icons">
+                    <a href="https://www.facebook.com/grindanddoseph" target="_blank" class="Socmed Facebook" title="Facebook"><img src="WebResources/FACEBOOK ICON.png" alt="Facebook" width="51px" height="auto"></a>
+   
+                    <a href="https://www.instagram.com/grindanddoseph?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="-blank" class="Socmed Instagram" title="Instagram"><img src="WebResources/INSTAGRAM ICON.png" alt="Instagram" width="53px" height="auto"></a>
+
+
+                    <a href="https://www.tiktok.com/@grindanddoseph?is_from_webapp=1&sender_device=pc" target="__blank" class="Socmed Tiktok" title="Tiktok"><img src="WebResources/TIKTOK ICON.png" alt="Tiktok" width="35px" height="auto"></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="FLogo"><img src="WebResources/logo white.png" alt="Footer Logo"></div>
+ 
+        <div class="Right-Section">
+
+
+            <div class="F-upperRight">
+                Copyright © 2024-2025 [Grind and Dose]. All<br>
+                Right Reserved. This website is for educational<br>
+                purposes only. Unauthorized use or distribution or<br>
+                the content on this site is prohibited.
+            </div>
+            <div class="F-lowerRight">
+                The content provided on this website, including text,<br>
+                graphics, and images, is for informational purposes<br>
+                and does not constitute professional advice.
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="Contact.js"></script>
+</body>
+</html>
+
+

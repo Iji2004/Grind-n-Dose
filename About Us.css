@@ -1,0 +1,525 @@
+
+
+/* Index Styles*/
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+body{
+    width:100%;
+    height: 100%;
+    background-image: url('WebResources/concrete\ bg\ vert.jpg');
+    background-size: cover;
+    box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin: 0;
+
+
+}
+
+
+/* WebPage Style for Index */
+.wrapper-banner{
+    position: relative;
+    /* height:100vh; */
+
+
+    width: 100%;
+   
+ 
+}
+.banner{
+    /* position: fixed; */
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: center;
+    animation: zoomOut 10s ease-out;
+    z-index:900;
+}
+
+
+.BannerImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('WebResources/BannerIndex.png');
+    background-repeat: no-repeat;
+    filter: brightness(40%);
+    z-index: 1;
+}
+
+
+.About-Us-Title h1 {
+    position: absolute;
+    text-align: left;
+    font-size: 2rem;
+    color: white;
+    background-color: red;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content:center;
+    align-items: center;
+    top: 10px;
+    left: 0;
+}
+
+
+.About-Us-Info{
+    display: block;
+    align-self: stretch;
+    flex-basis: auto;
+    position: relative;
+    justify-content: flex-start;
+    left: 5px;
+    flex-direction: column;
+    padding: 4%;
+    background-image: url('WebResources/BannerIndex.png');
+    /* filter: brightness(70%); */
+    background-repeat: no-repeat;
+    border: 2px;
+}
+
+
+
+
+/*
+.About-Us-Info {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('WebResources/BannerIndex.png');
+    background-repeat: no-repeat;
+    filter: brightness(40%);
+    z-index: 1;
+} */
+
+
+.About-Us-Info h1 {
+        position: relative;
+        margin-top: 4%;
+        margin-bottom: 35px;
+        font-size: 300%;
+        color: white;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-shadow: 5px 5px 2px rgba(0,0,0,0.4);
+        letter-spacing: 2px;
+}
+
+
+.About-Us-Info p {
+    font-size: 16px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.BannerIndex {
+    width: 100%;
+    height: 100%;
+}
+
+
+.BannerContent{
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    width: 100%;
+    height: 100%;
+    z-index: 600;
+}
+.BannerContent-BannerDetails .overlay-text {
+    color: antiquewhite;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    font-weight: bolder;
+    text-align: left;
+}
+.BannerDetails h1 {
+    font-size: xx-large;
+}
+
+
+
+
+.BannerLogo{
+    width: 500px;
+    filter: brightness(100%);
+    z-index: 500;
+    position:relative;
+    opacity:0;
+    z-index: 500;
+}
+.BannerLogo.show{
+    opacity: 1;
+}
+.BannerLogo img{
+    position: relative;
+    display: flex;
+    filter: brightness(50%);
+    width: 100%;
+    height: auto;
+    opacity: 0%;
+
+
+}
+
+
+.BannerDetails{
+    color: white;
+    font-size: large;
+    text-align: left;
+    display: flex;
+
+
+    align-items: left;
+    opacity:0;
+}
+   
+@media only screen and (max-width: 1024px){
+    /* .banner {
+       margin-right: 100px;
+    } */
+    .BannerContent{
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+    }
+    .BannerLogo {
+        left:50px;
+    }
+    .BannerLogo img{
+        width:400px;
+    }
+    .BannerDetails{
+        font-size:25px;
+        right:100px;
+    }
+}
+
+
+/* banner mobile view */
+@media only screen and (max-width: 390px) {
+   
+    .about-paragraph p {
+        font-size: 10px;
+        text-align: justify;
+        /* background-color: #a66161 */
+    }
+   
+}
+
+
+/* Main Container */
+.WebContainer {
+    justify-content: flex-start;
+    position: relative;
+    margin: 0 auto;
+    max-width: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    box-shadow: 0 10px 15px 15px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(#282524, #4d3932, #6b4b38, #4d3932);
+    /* overflow: hidden;  */
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-bottom: 110px;
+   
+   
+}
+@media only screen and (max-width: 390px){
+    .WebContainer{
+        margin-top: 100px;
+    }
+}
+/* FOUNDER PART */
+
+/* PosterContainer */
+.Founder-container {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+.Founder-Description p{
+    margin-top: 4%;
+    margin-bottom: 9%;
+    font-size: 300%;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 5px 5px 2px rgba(0,0,0,0.4);
+    letter-spacing: 2px;
+}
+
+
+.Founder h1 {
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start ;
+    top: 1%;
+    left: 0;
+    margin-left: 2%;
+    font-size: 300%;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 5px 5px 2px rgba(0,0,0,0.4);
+    letter-spacing: 2px;
+   
+}
+
+
+
+
+.Founder{
+    display: flex;
+    justify-self: flex-start;
+    align-items: end;
+    /* flex-direction: column; */
+}
+
+
+.OuterContainer {
+    width: 100%;
+    /* margin: 0 auto; */
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;  */
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+.left-right-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+@media screen and (max-width: 390px) {
+    .LeftContainer{
+        width: 20vw;
+        height: 30vh;
+    }
+    .LeftContainer img{
+        width: 300px;
+    }
+    .RightContainer h1{
+        position: relative;
+        font-size: 20px;
+        /* background-color: aqua; */
+        margin-top: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .RightContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        /* position:absolute; */
+        right: 80px;
+    }
+}
+
+
+.LeftContainer{
+    justify-content: flex-start;
+    align-self: flex-start;
+    position: relative;
+    display: flex;
+    width:500px;
+    background-color: #a66161;
+    text-align: center;
+    margin-left: 15px;
+}
+.LeftContainer img{
+    position: relative;
+    max-width: fit-content;
+    border: 10px;
+    border-left: 10px;
+    width: 100%;
+    height: 10  0%;
+    padding: 16px;
+    padding-bottom: 80px;
+    background-color: #D9D9D9;
+}
+
+
+.FounderPhoto {
+    display: flex;
+    position: absolute;
+    left: 0%;
+    margin-top: 2%;
+    margin-bottom: 6%;
+    height: 2%;
+    width: 40%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    align-self: flex-start;
+    padding: 5%
+}
+
+
+@media only screen and (max-width: 390px){
+    .LeftContainer img{
+        position: relative;
+        /* background-color: aquamarine; */
+        display:flex;
+        width: 700px;
+    }
+}
+.RightContainer{
+    /* background-color: rgb(35, 74, 74); */
+    position: relative;
+    display: flex;
+    width:100%;
+    height: auto;
+    /* padding: 20px; */
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+.RightContainer h1 {
+    font-size: 200%;
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start ;
+    top: 1%;
+    left: 0;
+    margin-left: 2%;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 5px 5px 2px rgba(0,0,0,0.4);
+    letter-spacing: 2px;
+}
+.RightContainer p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100%;
+    letter-spacing: -1px;
+    text-align: left;
+    color: white;
+    padding-left: 20px;
+    text-shadow: 5px 5px 2px rgba(0,0,0,0.4);
+}
+
+
+
+
+@media only screen and (max-width: 1024px){
+    .LeftContainer {
+        width: 50%;
+    }
+}
+
+
+@media only screen and (max-width: 1024px){
+    .RightContainer {
+        width: auto;
+    }
+}
+
+/* Video and Operating hrs tablet view */
+@media only screen and (max-width: 1024px) {
+
+
+    .OuterContainer{
+        width:80%
+    }
+}
+
+
+/* Video and Operating hrs mobile view */
+@media only screen and (max-width: 390px){
+    .OuterContainer{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+
+   
+/* Unique branding mobile view */
+@media only screen and (max-width: 390px){
+    .UniqueBranding {
+        grid-template-columns: 1fr; 
+        gap: 50px;
+        height: auto;
+    }
+    .Branding {
+        width: 90%;
+        height:90%;                                                                                  
+    }
+
+
+    .Cover.Photo img {
+        width: 100%;
+        height: auto;
+    }
+    .Cover.Video video {
+        height: auto;
+    }
+}
+}
+
+
+/* for form validation */
+.success{
+    background-color: green;
+    color:white;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+.error{
+    background-color: red;
+    color:white;    
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+.accepted{
+    border: 3px solid green;
+}
+.rejected{
+    border: 3px solid red;
+}
+input:focus{
+    outline: none;
+}
+span{
+    z-index: 50000;
+    height: auto;
+
+
+}

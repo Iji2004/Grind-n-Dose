@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu with Add to Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+    .menu-item {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+    }
+    .menu-item button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .menu-item button::before {
+      content: '+';
+    }
+    .menu-item button:hover {
+      background-color: #218838;
+    }
+    .cart-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .cart-modal h2 {
+      margin-top: 0;
+    }
+    .cart-modal ul {
+      list-style: none;
+      padding: 0;
+    }
+    .cart-modal ul li {
+      margin-bottom: 10px;
+    }
+    .cart-modal button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart-modal button:hover {
+      background-color: #c82333;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>Menu</h1>
+  <div class="menu">
+    <div class="menu-item">
+      <h3>Pizza</h3>
+      <p>$10.00</p>
+      <button onclick="addToCart('Pizza', 10.00)"></button>
+    </div>
+    <div class="menu-item">
+      <h3>Burger</h3>
+      <p>$7.00</p>
+      <button onclick="addToCart('Burger', 7.00)"></button>
+    </div>
+    <div class="menu-item">
+      <h3>Fries</h3>
+      <p>$3.50</p>
+      <button onclick="addToCart('Fries', 3.50)"></button>
+    </div>
+  </div>
+
+  <button onclick="toggleCart()" style="margin: 20px; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px;">View Cart</button>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="cart-modal" id="cartModal">
+    <h2>Your Cart</h2>
+    <ul id="cartItems">
+      <li>Your cart is empty.</li>
+    </ul>
+    <p id="cartTotal">Total: $0.00</p>
+    <button onclick="toggleCart()">Close</button>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function addToCart(item, price) {
+      const existingItem = cart.find(cartItem => cartItem.item === item);
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+        existingItem.totalPrice += price;
+      } else {
+        cart.push({ item, price, quantity: 1, totalPrice: price });
+      }
+
+      alert(`${item} added to cart!`);
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById('cartModal');
+      const overlay = document.getElementById('overlay');
+      
+      if (modal.style.display === 'block') {
+        modal.style.display = 'none';
+        overlay.style.display = 'none'; 
+      } else {
+        displayCartItems();
+        modal.style.display = 'block';
+        overlay.style.display = 'block';
+      }
+    }
+
+    function displayCartItems() {
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      cartItems.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<li>Your cart is empty.</li>';
+        cartTotal.textContent = 'Total: $0.00';
+        return;
+      }
+
+      let total = 0;
+
+      cart.forEach((item) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.item} x${item.quantity} - $${item.totalPrice.toFixed(2)}`;
+        cartItems.appendChild(listItem);
+        total += item.totalPrice;
+      });
+
+      cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
